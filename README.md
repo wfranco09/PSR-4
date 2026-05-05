@@ -16,7 +16,7 @@ Este repositorio contiene la implementación práctica del uso de Composer Autol
 ## Guía de Instalación
 ### Clonar el repositorio:
 ```bash
-https://github.com/wfranco09/PSR-4.git
+git clone https://github.com/wfranco09/PSR-4.git
 ```
 ### Acceder a la carpeta del proyecto:
 ```bash
@@ -108,6 +108,9 @@ echo $product->getId();
 ```
 Gracias al autoload, no es necesario incluir manualmente los archivos de las clases.
 
+## Nota
+La carpeta `vendor/` no se incluye en el repositorio, ya que es generada automáticamente mediante Composer al ejecutar `composer install` o `composer dump-autoload`.
+
 ## Estructura de Carpetas
 El proyecto sigue el estándar PSR-4, donde los namespaces están directamente relacionados con la estructura de carpetas:
 ```bash
@@ -141,18 +144,52 @@ autoload-psr4/
 
 ## Relación clave:
 ```bash
-Namespace: App\Usuario
-Ruta física: src/Usuario.php
+Namespace: App\User  
+Ruta física: App/User.php
 ```
 
 ## Pruebas de Ejecución - Imagenes
 A continuación se muestran evidencias del correcto funcionamiento del sistema utilizando Composer Autoload bajo el estándar PSR-4.
 ### Generación del Autoload
 Se ejecutó el comando para generar los archivos de carga automática:
+
 ![imagen](imgs/im1.png)
+
 Esto permite que Composer registre automáticamente las clases según su namespace y ruta definida.
 
 ### Ejecución del Sistema
 Se ejecutó el archivo principal del proyecto:
 
+![imagen](imgs/im2.png) 
+
+Esta imagen demuestra que:
+- Las clases fueron cargadas automáticamente
+- No se utilizaron require manuales
+- El sistema funciona correctamente sin errores de tipo Class not found
+
+## Conclusiones Técnicas
+
+### 🔹 Mantenibilidad
+El uso de Composer Autoload permite nos agregar nuevas clases al proyecto sin necesidad de modificar manualmente múltiples archivos, lo que facilita la escalabilidad y organización del sistema.
+
+### 🔹 Eficiencia de Memoria
+Gracias al concepto de Lazy Loading, las clases se cargan únicamente cuando son necesarias, optimizando el uso de memoria y mejorando el rendimiento del sistema.
+
+### 🔹 Estandarización
+El uso del estándar PSR-4 proporciona una estructura clara y organizada, permitiendo que el proyecto sea más entendible y compatible con frameworks modernos como Laravel.
+
+
+## Autor
+**Winstron Franco**  
+1GS131 - Desarrollo de Software VII 
+Universidad Tecnológica de Panamá  
+
+📧 **Email:** winston.franco@utp.ac.pa<br>
+📧 **Email:** winstonfranco56@gmail.com<br>
+🌐 **GitHub:** https://github.com/wfranco09<br>
+
+**Instructor del Laboratorio::** Ing. Irina Fong
+
+## Fecha de Ejecución del Laboratorio
+5 de mayo 2026
 
