@@ -1,0 +1,158 @@
+![imagentitulo](imgs/cover.png)
+
+## Laboratorio #4- Implementación de la Carga Automática (Autoload) bajo el Estándar PSR-4 con Composer.
+
+Este repositorio contiene la implementación práctica del uso de Composer Autoload bajo el estándar PSR-4, permitiendo la carga automática de clases en PHP sin necesidad de utilizar include o require manualmente.
+
+## Objetivos del laboratorio
+
+🔹 Comprender la importancia de la documentación en proyectos de desarrollo de software<br>
+🔹 Aplicar el estándar PSR-4 para la organización de clases y namespaces.<br>
+🔹 Configurar correctamente el archivo composer.json para implementar la carga automática.<br>
+🔹 Evidenciar el uso de Composer en la gestión de dependencias y autoload.<br>
+🔹 Demostrar el correcto funcionamiento del sistema evitando errores como Class not found.<br>
+
+
+## Guía de Instalación
+### Clonar el repositorio:
+```bash
+https://github.com/wfranco09/PSR-4.git
+```
+### Acceder a la carpeta del proyecto:
+```bash
+cd autoload-psr4
+```
+### Instalar dependencias y generar el autoload:
+```bash
+composer install
+```
+### O en caso necesario:
+```bash
+composer dump-autoload
+```
+
+## Funcionamiento del Autoload y Clases
+
+En este proyecto se implementa la carga automática de clases utilizando Composer bajo el estándar PSR-4, lo que permite instanciar clases sin necesidad de incluir archivos manualmente mediante require o include.
+
+## El archivo principal (index.php) únicamente requiere el archivo:
+```bash
+require 'vendor/autoload.php';
+```
+Este archivo es generado automáticamente por Composer y se encarga de localizar e incluir las clases según el namespace definido en el archivo composer.json.
+
+## Relación Namespace ↔ Ruta
+
+El archivo composer.json define el mapeo entre namespaces y carpetas físicas:
+```bash
+"autoload": {
+    "psr-4": {
+        "App\\": "App/",
+        "Database\\": "Database/"
+    }
+}
+```
+Esto significa que:
+- App\User → App/User.php
+- Database\model\ProductModel → Database/model/ProductModel.php
+
+## Código de las Clases 
+🔹 Clase User
+```bash
+namespace App;
+class User {
+    public function getName(): string
+    {
+        return "Dave";
+    }
+}
+```
+### Descripción:
+Esta clase representa un usuario del sistema.
+```bash
+Función getName()
+```
+Retorna el nombre del usuario en formato de cadena (string).
+
+🔹Clase ProductModel
+```bash
+namespace Database\model;
+
+class ProductModel {
+    public function getId(): int
+    {
+        return 123;
+    }
+}
+```
+### Descripción:
+Esta clase simula un modelo de datos de producto.
+```bash
+Función getId()
+```
+Retorna el identificador del producto como un número entero (int)
+
+
+## Uso en el sistema
+En el archivo principal (index.php) se utilizan las clases de la siguiente manera:
+```bash
+use App\User;
+use Database\model\ProductModel;
+
+$user = new User();
+echo $user->getName();
+
+$product = new ProductModel();
+echo $product->getId();
+
+```
+Gracias al autoload, no es necesario incluir manualmente los archivos de las clases.
+
+## Estructura de Carpetas
+El proyecto sigue el estándar PSR-4, donde los namespaces están directamente relacionados con la estructura de carpetas:
+```bash
+autoload-psr4/
+│
+├── App/                          → Clases principales (Namespace: App)
+│   └── User.php
+│
+├── Database/
+│   └── model/                    → Modelos del sistema
+│       └── ProductModel.php
+│
+├── imgs/                         → Recursos visuales (imágenes del README)
+│
+├── vendor/                       → Dependencias de Composer (autoload)
+│   ├── composer/
+│   │   ├── autoload_classmap.php
+│   │   ├── autoload_namespaces.php
+│   │   ├── autoload_psr4.php
+│   │   ├── autoload_real.php
+│   │   ├── autoload_static.php
+│   │   └── ClassLoader.php
+│   │
+│   ├── LICENSE
+│   └── autoload.php
+│
+├── composer.json                 → Configuración de Composer (PSR-4)
+├── ejecutar.txt                  → Archivo de instrucciones de ejecución
+└── index.php                     → Punto de entrada del sistema
+```
+
+## Relación clave:
+```bash
+Namespace: App\Usuario
+Ruta física: src/Usuario.php
+```
+
+## Pruebas de Ejecución - Imagenes
+A continuación se muestran evidencias del correcto funcionamiento del sistema utilizando Composer Autoload bajo el estándar PSR-4.
+### Generación del Autoload
+Se ejecutó el comando para generar los archivos de carga automática:
+![imagen](imgs/im1.png)
+Esto permite que Composer registre automáticamente las clases según su namespace y ruta definida.
+
+### Ejecución del Sistema
+Se ejecutó el archivo principal del proyecto:
+
+
