@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="imgs/ima1.png" width="500">
+  <img src="imgs/ima1.webp" width="800">
 </p>
 
 ## Laboratorio #4- Implementación de la Carga Automática (Autoload) bajo el Estándar PSR-4 con Composer.
