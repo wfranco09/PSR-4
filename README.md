@@ -8,7 +8,7 @@ El Autoload es un mecanismo en PHP que permite cargar clases automáticamente si
 Mediante el uso de Composer y el estándar PSR-4, se establece una relación entre los namespaces y la estructura de carpetas del proyecto, permitiendo que las clases se carguen de forma dinámica cuando son necesarias.
 En este laboratorio se implementa este enfoque, demostrando cómo el uso de Autoload facilita el desarrollo, mejora la mantenibilidad del sistema y promueve buenas prácticas en la programación.
 
-## Objetivos del laboratorio
+## 🎯Objetivos del laboratorio
 
 🔹 Comprender la importancia de la documentación en proyectos de desarrollo de software<br>
 🔹 Aplicar el estándar PSR-4 para la organización de clases y namespaces.<br>
@@ -16,8 +16,24 @@ En este laboratorio se implementa este enfoque, demostrando cómo el uso de Auto
 🔹 Evidenciar el uso de Composer en la gestión de dependencias y autoload.<br>
 🔹 Demostrar el correcto funcionamiento del sistema evitando errores como Class not found.<br>
 
+## ⚙️ Requisitos Previos
 
-## Guía de Instalación
+Para ejecutar este proyecto se requiere:
+
+- PHP 8.2 o superior
+- Composer (última versión)
+- Bases de datos Mysql
+- XAMPP (Apache y MySQL)
+
+### 🌐 Tecnologías utilizadas
+
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) 
+![Composer](https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=composer&logoColor=white) 
+![XAMPP](https://img.shields.io/badge/XAMPP-F37623?style=for-the-badge&logo=xampp&logoColor=white) 
+![MySQL](https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white) 
+
+
+## 👩🏻‍💻Guía de Instalación
 ### Clonar el repositorio:
 ```bash
 git clone https://github.com/wfranco09/PSR-4.git
@@ -129,17 +145,7 @@ autoload-psr4/
 │
 ├── imgs/                         → Recursos visuales (imágenes del README)
 │
-├── vendor/                       → Dependencias de Composer (autoload)
-│   ├── composer/
-│   │   ├── autoload_classmap.php
-│   │   ├── autoload_namespaces.php
-│   │   ├── autoload_psr4.php
-│   │   ├── autoload_real.php
-│   │   ├── autoload_static.php
-│   │   └── ClassLoader.php
-│   │
-│   ├── LICENSE
-│   └── autoload.php
+├── .gitignore                    → obligando a que la carga automática se genere localmente mediante Composer.
 │
 ├── composer.json                 → Configuración de Composer (PSR-4)
 ├── ejecutar.txt                  → Archivo de instrucciones de ejecución
