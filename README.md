@@ -129,17 +129,7 @@ autoload-psr4/
 │
 ├── imgs/                         → Recursos visuales (imágenes del README)
 │
-├── vendor/                       → Dependencias de Composer (autoload)
-│   ├── composer/
-│   │   ├── autoload_classmap.php
-│   │   ├── autoload_namespaces.php
-│   │   ├── autoload_psr4.php
-│   │   ├── autoload_real.php
-│   │   ├── autoload_static.php
-│   │   └── ClassLoader.php
-│   │
-│   ├── LICENSE
-│   └── autoload.php
+├── .gitignore                    → obligando a que la carga automática se genere localmente mediante Composer.
 │
 ├── composer.json                 → Configuración de Composer (PSR-4)
 ├── ejecutar.txt                  → Archivo de instrucciones de ejecución
