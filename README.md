@@ -1,8 +1,12 @@
-![imagentitulo](imgs/cover.png)
+
+<p align="center">
+  <img src="imgs/cover.png" width="300">
+</p>
 
 ## Laboratorio #4- Implementación de la Carga Automática (Autoload) bajo el Estándar PSR-4 con Composer.
-
-Este repositorio contiene la implementación práctica del uso de Composer Autoload bajo el estándar PSR-4, permitiendo la carga automática de clases en PHP sin necesidad de utilizar include o require manualmente.
+El Autoload es un mecanismo en PHP que permite cargar clases automáticamente sin necesidad de utilizar instrucciones como require o include. Esto mejora la organización del código y evita errores como “Class not found”.
+Mediante el uso de Composer y el estándar PSR-4, se establece una relación entre los namespaces y la estructura de carpetas del proyecto, permitiendo que las clases se carguen de forma dinámica cuando son necesarias.
+En este laboratorio se implementa este enfoque, demostrando cómo el uso de Autoload facilita el desarrollo, mejora la mantenibilidad del sistema y promueve buenas prácticas en la programación.
 
 ## Objetivos del laboratorio
 
