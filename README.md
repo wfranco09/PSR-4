@@ -22,6 +22,7 @@ Para ejecutar este proyecto se requiere:
 
 - PHP 8.2 o superior
 - Composer (última versión)
+- Autoload
 - Bases de datos Mysql
 - XAMPP (Apache y MySQL)
 
@@ -31,6 +32,7 @@ Para ejecutar este proyecto se requiere:
 ![Composer](https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=composer&logoColor=white) 
 ![XAMPP](https://img.shields.io/badge/XAMPP-F37623?style=for-the-badge&logo=xampp&logoColor=white) 
 ![MySQL](https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white) 
+![Autoload](https://img.shields.io/badge/Composer-Autoload-orange) 
 
 
 ## 👩🏻‍💻Guía de Instalación
@@ -148,7 +150,6 @@ autoload-psr4/
 ├── .gitignore                    → obligando a que la carga automática se genere localmente mediante Composer.
 │
 ├── composer.json                 → Configuración de Composer (PSR-4)
-├── ejecutar.txt                  → Archivo de instrucciones de ejecución
 └── index.php                     → Punto de entrada del sistema
 ```
 
